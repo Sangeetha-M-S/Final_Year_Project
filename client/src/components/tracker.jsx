@@ -134,28 +134,7 @@ const Tracker = () => {
                 var ctr = await Data.methods.medicineCount().call();
                 console.log(medicineID);
                 if (!((medicineID > 0) && (medicineID <= ctr))){
-                        <table className="w-full mt-4 border border-gray-200">
-                                 <thead>
-                                 <tr className="bg-gray-100">
-                                         <th className="border border-gray-200 px-4 py-2 text-2xl">Medicine ID</th>
-                                         <th className="border border-gray-200 px-4 py-2 text-2xl">Name</th>
-                                         <th className="border border-gray-200 px-4 py-2 text-2xl">Date of Expiry</th>
-                                         <th className="border border-gray-200 px-4 py-2 text-2xl">Description</th>
-                                         <th className="border border-gray-200 px-4 py-2 text-2xl">Current Stage</th>
-                                 </tr>
-                                 </thead>
-                                 <tbody>
-                                 {MED && Object.values(MED).map((med, index) => (
-                                         <tr key={index} className={index % 2 === 0 ? 'bg-gray-50' : ''}>
-                                         <td className="border border-gray-200 px-4 py-2 text-2xl">{med.id}</td>
-                                         <td className="border border-gray-200 px-4 py-2 text-2xl">{med.name}</td>
-                                         <td className="border border-gray-200 px-4 py-2 text-2xl">{med.expDate}</td>
-                                         <td className="border border-gray-200 px-4 py-2 text-2xl">{med.description}</td>
-                                         <td className="border border-gray-200 px-4 py-2 text-2xl">{MedStage[index+1]}</td>
-                                         </tr>
-                                 ))}
-                                 </tbody>
-                         </table>
+                   
                         alert("Invalid Medicine ID!!!");
                 }
                 else {
@@ -188,47 +167,47 @@ const Tracker = () => {
                 if (TrackTillSold && MED && MED[medicineID] && RET && MAN && DIS && RMS) {
                         return (
                                 <div className="container-xl">
-                                    <div className="grid place-items-start text-xl">
+                                    {/* <div className="grid place-items-start text-2xl">
                                         <h2><b><u>Medicine Details :</u></b></h2>
                                         <span><b>Medicine ID: </b>{MED[medicineID].id}</span>
                                         <span><b>Name:</b> {MED[medicineID].name}</span>
                                         <span><b>Description: </b>{MED[medicineID].description}</span>
                                         <span><b>Expiry Date: </b>{MED[medicineID].expDate}</span>
                                         <span><b>Current stage: </b>{MedStage[medicineID]}</span>
-                                    </div>
-                                
-                                    <br />
-                                    <div className="grid gap-x-8 gap-y-4 grid-cols-5">
+                                    </div> */}
+                                    <br/>
+                                    
+                                    <div className="grid gap-x-8 gap-y-4 grid-cols-5 text-2xl">
                     
-                                        <div>
+                                        <div className="border-solid border-4 border-white p-4">
                                             <h2><b><u>Raw Materials Supplied by:</u></b></h2>
                                             <p><b>Supplier ID: </b>{RMS[MED[medicineID].RMSid].id}</p>
                                             <p><b>Name:</b> {RMS[MED[medicineID].RMSid].name}</p>
                                             <p><b>Place: </b>{RMS[MED[medicineID].RMSid].place}</p>
                                         </div>
                                         {/* <span>&#10132;</span> */}
-                                        <div>
+                                        <div className="border-solid border-4 border-white p-4">
                                             <h2><b><u>Manufactured by:</u></b></h2>
                                             <p><b>Manufacturer ID: </b>{MAN[MED[medicineID].MANid].id}</p>
                                             <p><b>Name:</b> {MAN[MED[medicineID].MANid].name}</p>
                                             <p><b>Place: </b>{MAN[MED[medicineID].MANid].place}</p>
                                         </div>
                                         {/* <span>&#10132;</span> */}
-                                        <div className="flex-row ">
+                                        <div className="flex-row border-solid border-4 border-white p-4">
                                             <h2><u><b>Distributed By:</b></u></h2>
                                             <p><b>Distributor ID: </b>{DIS[MED[medicineID].DISTid].id}</p>
                                             <p><b>Name:</b> {DIS[MED[medicineID].DISTid].name}</p>
                                             <p><b>Place: </b>{DIS[MED[medicineID].DISTid].place}</p>
                                         </div>
                                         {/* <span>&#10132;</span> */}
-                                        <div>
+                                        <div className="border-solid border-4 border-white p-4">
                                             <h2><b><u>Retailed by:</u></b></h2>
                                             <p><b>Retailer ID: </b>{RET[MED[medicineID].RETid].id}</p>
                                             <p><b>Name:</b> {RET[MED[medicineID].RETid].name}</p>
                                             <p><b>Place: </b>{RET[MED[medicineID].RETid].place}</p>
                                         </div>
                                         {/* <span>&#10132;</span> */}
-                                        <div className='text-xxl'>
+                                        <div className='text-xxl border-solid border-4 border-white p-4 place-content-center'>
                                             <b>Sold</b>
                                         </div>
                                     </div>
@@ -244,44 +223,44 @@ const Tracker = () => {
                 if (TrackTillRetail && MED && MED[medicineID] && RET && MAN && DIS && RMS) {
                         return (
                                 <div className="container-xl">
-                                    <div className="grid place-items-start">
+                                    {/* <div className="grid place-items-start text-2xl">
                                         <h3 className='mt-3'><b><u>Medicine Details :</u></b></h3>
                                         <span><b>Medicine ID: </b>{MED[medicineID].id}</span>
-                                        <br />
+                                        
                                         <span><b>Name:</b> {MED[medicineID].name}</span>
-                                        <br />
+                                        
                                         <span><b>Description: </b>{MED[medicineID].description}</span>
-                                        <br />
+                                        
                                         <span><b>Expiry Date: </b>{MED[medicineID].expDate}</span>
-                                        <br />
+                                        
                                         <span><b>Current stage: </b>{MedStage[medicineID]}</span>
-                                    </div>
-                                    <hr />
-                                    <br />
-                                    <div className="grid gap-x-8 gap-y-4 grid-cols-5">
+                                    </div> */}
+                                    <br/>
+                                    
+                                    <div className="grid gap-x-8 gap-y-4 grid-cols-5 text-2xl">
                     
-                                        <div >
+                                        <div className="border-solid border-4 border-white p-4">
                                             <h2><u>Raw Materials Supplied by:</u></h2>
                                             <p><b>Supplier ID: </b>{RMS[MED[medicineID].RMSid].id}</p>
                                             <p><b>Name:</b> {RMS[MED[medicineID].RMSid].name}</p>
                                             <p><b>Place: </b>{RMS[MED[medicineID].RMSid].place}</p>
                                         </div>
                                         {/* <span>&#10132;</span> */}
-                                        <div >
+                                        <div className="border-solid border-4 border-white p-4">
                                             <h2><u>Manufactured by:</u></h2>
                                             <p><b>Manufacturer ID: </b>{MAN[MED[medicineID].MANid].id}</p>
                                             <p><b>Name:</b> {MAN[MED[medicineID].MANid].name}</p>
                                             <p><b>Place: </b>{MAN[MED[medicineID].MANid].place}</p>
                                         </div>
                                         {/* <span>&#10132;</span> */}
-                                        <div >
+                                        <div className="border-solid border-4 border-white p-4">
                                             <h2><u>Distributed by:</u></h2>
                                             <p><b>Distributor ID: </b>{DIS[MED[medicineID].DISTid].id}</p>
                                             <p><b>Name:</b> {DIS[MED[medicineID].DISTid].name}</p>
                                             <p><b>Place: </b>{DIS[MED[medicineID].DISTid].place}</p>
                                         </div>
                                         {/* <span>&#10132;</span> */}
-                                        <div >
+                                        <div className="border-solid border-4 border-white p-4">
                                             <h2><u>Retailed by:</u></h2>
                                             <p><b>Retailer ID: </b>{RET[MED[medicineID].RETid].id}</p>
                                             <p><b>Name:</b> {RET[MED[medicineID].RETid].name}</p>
@@ -300,37 +279,37 @@ const Tracker = () => {
                 if (TrackTillDistribution && MED && MED[medicineID] && MAN && DIS && RMS) {
                         return (
                                 <div className="container-xl">
-                                    <div className="grid place-items-start">
+                                    {/* <div className="grid place-items-start text-2xl">
                                         <h3 className='mt-3'><b><u>Medicine Details :</u></b></h3>
                                         <span><b>Medicine ID: </b>{MED[medicineID].id}</span>
-                                        <br />
+                                        
                                         <span><b>Name:</b> {MED[medicineID].name}</span>
-                                        <br />
+                                        
                                         <span><b>Description: </b>{MED[medicineID].description}</span>
-                                        <br />
+                                        
                                         <span><b>Expiry Date: </b>{MED[medicineID].expDate}</span>
-                                        <br />
+                                        
                                         <span><b>Current stage: </b>{MedStage[medicineID]}</span>
-                                    </div>
-                                    <hr />
-                                    <br />
-                                    <div className="grid gap-x-8 gap-y-4 grid-cols-5">
+                                    </div> */}
+                                    <br/>
+                                    
+                                    <div className="grid gap-x-8 gap-y-4 grid-cols-5 text-2xl">
                     
-                                        <div >
+                                        <div className="border-solid border-4 border-white p-4">
                                             <h2><u>Raw Materials Supplied by:</u></h2>
                                             <p><b>Supplier ID: </b>{RMS[MED[medicineID].RMSid].id}</p>
                                             <p><b>Name:</b> {RMS[MED[medicineID].RMSid].name}</p>
                                             <p><b>Place: </b>{RMS[MED[medicineID].RMSid].place}</p>
                                         </div>
                                         {/* <span>&#10132;</span> */}
-                                        <div >
+                                        <div className="border-solid border-4 border-white p-4">
                                             <h2><u>Manufactured by:</u></h2>
                                             <p><b>Manufacturer ID: </b>{MAN[MED[medicineID].MANid].id}</p>
                                             <p><b>Name:</b> {MAN[MED[medicineID].MANid].name}</p>
                                             <p><b>Place: </b>{MAN[MED[medicineID].MANid].place}</p>
                                         </div>
                                         {/* <span>&#10132;</span> */}
-                                        <div >
+                                        <div className="border-solid border-4 border-white p-4">
                                             <h2><u>Distributed by:</u></h2>
                                             <p><b>Distributor ID: </b>{DIS[MED[medicineID].DISTid].id}</p>
                                             <p><b>Name:</b> {DIS[MED[medicineID].DISTid].name}</p>
@@ -349,30 +328,30 @@ const Tracker = () => {
                 if (TrackTillManufacture && MED && MED[medicineID] && MAN && RMS) {
                         return (
                                 <div className="container-xl">
-                                    <div className="grid place-items-start">
+                                    {/* <div className="grid place-items-start text-2xl">
                                         <h3 className='mt-3'><b><u>Medicine Details :</u></b></h3>
                                         <span><b>Medicine ID: </b>{MED[medicineID].id}</span>
-                                        <br />
+                                        
                                         <span><b>Name:</b> {MED[medicineID].name}</span>
-                                        <br />
+                                        
                                         <span><b>Description: </b>{MED[medicineID].description}</span>
-                                        <br />
+                                        
                                         <span><b>Expiry Date: </b>{MED[medicineID].expDate}</span>
-                                        <br />
+                                        
                                         <span><b>Current stage: </b>{MedStage[medicineID]}</span>
-                                    </div>
-                                    <hr />
-                                    <br />
-                                    <div className="grid gap-x-8 gap-y-4 grid-cols-5">
+                                    </div> */}
+                                    <br/>
+                                    
+                                    <div className="grid gap-x-8 gap-y-4 grid-cols-5 text-2xl">
                     
-                                        <div >
+                                        <div className="border-solid border-4 border-white p-4">
                                             <h2><u>Raw Materials Supplied by:</u></h2>
                                             <p><b>Supplier ID: </b>{RMS[MED[medicineID].RMSid].id}</p>
                                             <p><b>Name:</b> {RMS[MED[medicineID].RMSid].name}</p>
                                             <p><b>Place: </b>{RMS[MED[medicineID].RMSid].place}</p>
                                         </div>
                                         {/* <span>&#10132;</span> */}
-                                        <div >
+                                        <div className="border-solid border-4 border-white p-4">
                                             <h2><u>Manufactured by:</u></h2>
                                             <p><b>Manufacturer ID: </b>{MAN[MED[medicineID].MANid].id}</p>
                                             <p><b>Name:</b> {MAN[MED[medicineID].MANid].name}</p>
@@ -391,23 +370,22 @@ const Tracker = () => {
                 if (TrackTillRMS && MED && MED[medicineID] && RMS) {
                         return (
                                 <div className="container-xl">
-                                    <div className="grid place-items-start">
+                                    {/* <div className="grid place-items-start text-2xl">
                                         <h3 className='mt-3'><b><u>Medicine Details :</u></b></h3>
                                         <span><b>Medicine ID: </b>{MED[medicineID].id}</span>
-                                        <br />
+        
                                         <span><b>Name:</b> {MED[medicineID].name}</span>
-                                        <br />
+        
                                         <span><b>Description: </b>{MED[medicineID].description}</span>
-                                        <br />
+        
                                         <span><b>Expiry Date: </b>{MED[medicineID].expDate}</span>
-                                        <br />
+        
                                         <span><b>Current stage: </b>{MedStage[medicineID]}</span>
-                                    </div>
-                                    <hr />
-                                    <br />
-                                    <div className="grid gap-x-8 gap-y-4 grid-cols-5">
+                                    </div> */}
+                                    <br/>
+                                    <div className="grid gap-x-8 gap-y-4 grid-cols-5 text-2xl">
                     
-                                        <div>
+                                        <div className="border-solid border-4 border-white p-4">
                                             <h2><u>Raw Materials Supplied by:</u></h2>
                                             <p><b>Supplier ID: </b>{RMS[MED[medicineID].RMSid].id}</p>
                                             <p><b>Name:</b> {RMS[MED[medicineID].RMSid].name}</p>
@@ -426,23 +404,22 @@ const Tracker = () => {
                 if (TrackTillOrdered && MED && MED[medicineID]) {
                         return (
                                 <div className="container-xl">
-                                    <div className="grid place-items-start">
+                                    {/* <div className="grid place-items-start text-2xl">
                                         <h3 className='mt-3'><b><u>Medicine Details :</u></b></h3>
                                         <span><b>Medicine ID: </b>{MED[medicineID].id}</span>
-                                        <br />
+                                        
                                         <span><b>Name:</b> {MED[medicineID].name}</span>
-                                        <br />
+                                        
                                         <span><b>Description: </b>{MED[medicineID].description}</span>
-                                        <br />
+                                        
                                         <span><b>Expiry Date: </b>{MED[medicineID].expDate}</span>
-                                        <br />
+                                        
                                         <span><b>Current stage: </b>{MedStage[medicineID]}</span>
-                                    </div>
-                                    <hr />
-                                    <br />
-                                    <div className="grid gap-x-8 gap-y-4 grid-cols-5">
+                                    </div> */}
+                                    <br/>
+                                    {/* <div className="grid gap-x-8 gap-y-4 grid-cols-5">
                                         <h2>Medicine is not yet Processed by Raw material supplier</h2>
-                                    </div>
+                                    </div> */}
                                     {/* <button onClick={() => {
                                         showTrackTillDistribution(false);
                                     }} className="btn btn-outline-primary btn-sm">Track Another Item</button> */}
@@ -456,24 +433,24 @@ const Tracker = () => {
             }
 
         return (
-                <div className="p-8 text-white bg-jade p-12 h-screen overflow-hidden">
+                <div className="p-8 text-white bg-gradient-to-r from-teal-600 to-teal-500 p-12 h-screen overflow-hidden">
                         <h1 className="text-6xl font-bold mb-8 text-white">Track Medicine</h1>
                         
                         <div className="p-4">
-                                <label className="block mb-8 text-4xl " htmlFor="license">Enter Medicine ID</label>
+                        <span className='inline-flex items-baseline'><label className="block mb-4 text-4xl mr-6" htmlFor="license">Enter Medicine ID</label>
                                 <input
-                                className="bg-but border rounded-md py-2 px-3 text-white leading-tight focus:outline-none focus:shadow-outline text-3xl"
+                                className="bg-white border rounded-md py-2 px-3 text-black leading-tight focus:outline-none focus:shadow-outline text-3xl"
                                 id="license"
                                 type="text"
                                 onChange={handleMedicineID}
                                 placeholder="Medicine ID"
                                 required
-                                />
+                                /></span>
                         </div>
-                        <button className='bg-heading text-white px-6 py-3 rounded-md mt-8 font-bold hover:bg-green-800 text-3xl' onClick={handlerSubmit}>Track</button>
-                        {/* <table className="w-full mt-4 border border-gray-200">
+                        <button className='bg-teal-800 hover:bg-teal-700 text-white px-6 py-3 rounded-md mt-4 font-bold  text-3xl' onClick={handlerSubmit}>Track</button>
+                        <table className="w-full mt-4 border border-gray-200">
                                 <thead>
-                                <tr className="bg-gray-100">
+                                <tr className="bg-gray-100 text-black">
                                         <th className="border border-gray-200 px-4 py-2 text-2xl">Medicine ID</th>
                                         <th className="border border-gray-200 px-4 py-2 text-2xl">Name</th>
                                         <th className="border border-gray-200 px-4 py-2 text-2xl">Date of Expiry</th>
@@ -483,7 +460,7 @@ const Tracker = () => {
                                 </thead>
                                 <tbody>
                                 {MED && Object.values(MED).map((med, index) => (
-                                        <tr key={index} className={index % 2 === 0 ? 'bg-gray-50' : ''}>
+                                        <tr key={index} className="bg">
                                         <td className="border border-gray-200 px-4 py-2 text-2xl">{med.id}</td>
                                         <td className="border border-gray-200 px-4 py-2 text-2xl">{med.name}</td>
                                         <td className="border border-gray-200 px-4 py-2 text-2xl">{med.expDate}</td>
@@ -492,13 +469,13 @@ const Tracker = () => {
                                         </tr>
                                 ))}
                                 </tbody>
-                        </table> */}
+                        </table>
 
                       
                         
                         {renderStageTable()}
                         <br></br>
-                        <button className="bg-heading text-white px-6 py-3 rounded-md ml-4 hover:bg-green-800 text-3xl font-bold mt-4 border-solid" onClick={handleRefresh}>Refresh</button>
+                        <button className="bg-teal-800 hover:bg-teal-700 text-white px-6 py-3 rounded-md ml-4 hover:bg-green-800 text-3xl font-bold mt-4 border-solid" onClick={handleRefresh}>Refresh</button>
                 </div>
                 );
         };

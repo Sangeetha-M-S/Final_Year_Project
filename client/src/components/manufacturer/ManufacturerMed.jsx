@@ -106,14 +106,14 @@ const ManufacturerMed = () => {
         };
 
     return (
-        <div>
-            <h1 className='text-6xl text-center font-bold text-blue-500 mt-16 mb-16'>Manufacture Medicine</h1>
+        <div className='bg-gradient-to-r from-teal-600 to-teal-500 h-screen'>
+            <h1 className='text-6xl text-center font-bold text-white p-5  mb-4'>Manufacture Medicine</h1>
             <div className="flex ">
                 <div className="w-1/2">
                     <div className="p-16 drop-shadow-xl">
-                        <label className="p-8 text-4xl font-bold" htmlFor="name">MedicineID</label>
+                        <label className="p-8 text-4xl font-bold text-white" htmlFor="name">MedicineID</label>
                         <input 
-                            className="text-3xl border border-black-300 rounded-md"
+                            className="text-3xl border border-black-300 rounded-md p-2"
                             id="id"
                             type="text"
                             onChange={handleMedicineID}
@@ -122,9 +122,9 @@ const ManufacturerMed = () => {
                         />
                     </div>
                     <div className="p-16 drop-shadow-xl">
-                        <label className="p-8 text-4xl font-bold" htmlFor="quantity">Quantity</label>
+                        <label className="p-8 text-4xl font-bold text-white" htmlFor="quantity">Quantity</label>
                         <input 
-                            className="text-3xl border border-black-300 rounded-md"
+                            className="text-3xl border border-black-300 rounded-md p-2"
                             id="quantity"
                             type="text"
                             onChange={handleQuantity}
@@ -136,9 +136,9 @@ const ManufacturerMed = () => {
                 
                 <div className="w-1/2">
                     <div className="p-16 drop-shadow-xl">
-                        <label className="p-8 text-4xl font-bold" htmlFor="doe">Date of Expiry</label>
+                        <label className="p-8 text-4xl font-bold text-white" htmlFor="doe">Date of Expiry</label>
                         <input 
-                            className="text-3xl border border-black-300 rounded-md"
+                            className="text-3xl border border-black-300 rounded-md p-2"
                             id="doe"
                             type="date"
                             onChange={handleDoe}
@@ -147,9 +147,9 @@ const ManufacturerMed = () => {
                         />
                     </div>
                     <div className="p-16 drop-shadow-xl">
-                        <label className="p-8 font-bold text-4xl" htmlFor="description">Description</label>
+                        <label className="p-8 font-bold text-4xl text-white" htmlFor="description">Description</label>
                         <input 
-                            className="text-3xl border border-black-300 rounded-md"
+                            className="text-3xl border border-black-300 rounded-md p-2"
                             id="description"
                             type="text"
                             onChange={handleDescription}
@@ -159,7 +159,7 @@ const ManufacturerMed = () => {
                     </div>
                 </div>
             </div>
-            <button className='bg-blue-500 text-white px-6 py-3 rounded-md mt-8 hover:bg-blue-600 text-3xl' onClick={handlerSubmitManufacturing}>Manufacture</button>
+            <button className='bg-teal-800 hover:bg-teal-700 text-white  px-6 py-3 rounded-md mt-2 mb-2 text-3xl' onClick={handlerSubmitManufacturing}>Manufacture</button>
             <table className="w-full mt-4 border border-gray-200">
                                 <thead>
                                 <tr className="bg-gray-100">
@@ -172,7 +172,7 @@ const ManufacturerMed = () => {
                                 </thead>
                                 <tbody>
                                 {MED && Object.values(MED).map((med, index) => (
-                                        <tr key={index} className={index % 2 === 0 ? 'bg-gray-50' : ''}>
+                                        <tr key={index} className="bg text-white">
                                         <td className="border border-gray-200 px-4 py-2 text-2xl">{med.id}</td>
                                         <td className="border border-gray-200 px-4 py-2 text-2xl">{med.name}</td>
                                         <td className="border border-gray-200 px-4 py-2 text-2xl">{med.expDate}</td>

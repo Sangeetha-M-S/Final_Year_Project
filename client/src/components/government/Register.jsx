@@ -183,14 +183,14 @@ const Register = () => {
         
 
         return (
-                <div className="">
-                        <h1 className="text-6xl text-center font-bold text-blue-500 mt-16 mb-16">Register Stakeholders</h1>
+                <div className="bg-gradient-to-r from-teal-600 to-teal-500 h-full">
+                        <h1 className="text-6xl text-center font-bold text-white p-5 mb-4">Register Stakeholders</h1>
                         <div className="flex">
-                                <div className="w-1/2 ">
+                                <div className="w-1/2  text-white">
                                         <div className="p-16 drop-shadow-xl">
                                                 <label className="p-8 text-4xl font-bold" htmlFor="name">Company Name</label>
                                                 <input 
-                                                        className="text-3xl border border-black-300 rounded-md"
+                                                        className="text-3xl border border-black-300 rounded-md p-2"
                                                         id="name"
                                                         type="text"
                                                         onChange={handleName}
@@ -201,7 +201,7 @@ const Register = () => {
                                         <div className="p-16 drop-shadow-xl">
                                                 <label className="p-8 text-4xl font-bold" htmlFor="wallet">Wallet address</label>
                                                 <input 
-                                                        className="text-3xl border border-black-300 rounded-md"
+                                                        className="text-3xl border border-black-300 rounded-md p-2"
                                                         id="wallet"
                                                         type="text"
                                                         onChange={handleWallet}
@@ -211,11 +211,11 @@ const Register = () => {
                                         </div>
                                 </div>
                         
-                                <div className="w-1/2">
+                                <div className="w-1/2  text-white">
                                         <div className="p-16 drop-shadow-xl">
                                                 <label className="p-8 text-4xl font-bold" htmlFor="industry">Stakeholder</label>
                                                 <select 
-                                                        className="text-3xl border border-black-300 rounded-md"
+                                                        className="text-3xl border border-black-300 rounded-md p-2"
                                                         onChange={handleIndustry}
                                                         required
                                                 >
@@ -229,7 +229,7 @@ const Register = () => {
                                         <div className="p-16 drop-shadow-xl">
                                                 <label className="p-8 text-4xl font-bold" htmlFor="license">License ID</label>
                                                 <input 
-                                                        className="text-3xl border border-black-300 rounded-md"
+                                                        className="text-3xl border border-black-300 rounded-md p-2"
                                                         id="license"
                                                         type="text"
                                                         onChange={handleLicense}
@@ -239,9 +239,9 @@ const Register = () => {
                                         </div>
                                 </div>
                         </div>
-                        <button className='border-4 border-green-400 bg-white text-green-400 px-6 py-3 rounded-md mt-8 hover:bg-green-300 hover:text-white transition-all duration-300 text-3xl font-bold' onClick={handleRegistration}>Register</button>
+                        <button className='bg-teal-800 hover:bg-teal-700 text-white px-6 py-3 rounded-md mb-2 mt-2 hover:bg-green-300 hover:text-white transition-all duration-300 text-3xl font-bold' onClick={handleRegistration}>Register</button>
                         <div className="my-8" >
-                                <h4 className="text-lg font-semibold mb-2">Raw Material Suppliers:</h4>
+                                <h4 className="text-2xl font-bold mb-2 text-white">Raw Material Suppliers:</h4>
                                 <table className="w-full table-auto border-collapse border border-gray-200">
                                 <thead>
                                         <tr className="bg-gray-100">
@@ -252,7 +252,7 @@ const Register = () => {
                                 </thead>
                                 <tbody>
                                         {RMS && Object.keys(RMS).map((key) => (
-                                        <tr key={key} className={key % 2 === 0 ? "bg-gray-50" : ""}>
+                                        <tr key={key} className="bg text-white">
                                                 <td className="border border-gray-200 px-4 py-2">{RMS[key].name}</td>
                                                 <td className="border border-gray-200 px-4 py-2">{RMS[key].place}</td>
                                                 <td className="border border-gray-200 px-4 py-2">{RMS[key].addr}</td>
@@ -264,7 +264,7 @@ const Register = () => {
 
                         {/* Manufacturers table */}
                         <div className="my-8">
-                                <h4 className="text-lg font-semibold mb-2">Manufacturers:</h4>
+                                <h4 className="text-2xl font-bold mb-2 text-white">Manufacturers:</h4>
                                 <table className="w-full table-auto border-collapse border border-gray-200">
                                 <thead>
                                         <tr className="bg-gray-100">
@@ -275,7 +275,7 @@ const Register = () => {
                                 </thead>
                                 <tbody>
                                         {MAN && Object.keys(MAN).map((key) => (
-                                        <tr key={key} className={key % 2 === 0 ? "bg-gray-50" : ""}>
+                                        <tr key={key} className="bg text-white">
                                                 <td className="border border-gray-200 px-4 py-2">{MAN[key].name}</td>
                                                 <td className="border border-gray-200 px-4 py-2">{MAN[key].place}</td>
                                                 <td className="border border-gray-200 px-4 py-2">{MAN[key].addr}</td>
@@ -285,7 +285,7 @@ const Register = () => {
                                 </table>
                         </div>
                         <div className="my-8">
-                                <h4 className="text-lg font-semibold mb-2">Distributors:</h4>
+                                <h4 className="text-2xl font-bold mb-2 text-white">Distributors:</h4>
                                 <table className="w-full table-auto border-collapse border border-gray-200">
                                 <thead>
                                         <tr className="bg-gray-100">
@@ -296,7 +296,7 @@ const Register = () => {
                                 </thead>
                                 <tbody>
                                         {DIS && Object.keys(DIS).map((key) => (
-                                        <tr key={key} className={key % 2 === 0 ? "bg-gray-50" : ""}>
+                                        <tr key={key} className="bg text-white">
                                                 <td className="border border-gray-200 px-4 py-2">{DIS[key].name}</td>
                                                 <td className="border border-gray-200 px-4 py-2">{DIS[key].place}</td>
                                                 <td className="border border-gray-200 px-4 py-2">{DIS[key].addr}</td>
@@ -308,7 +308,7 @@ const Register = () => {
 
                         {/* Retailers table */}
                         <div className="my-8">
-                                <h4 className="text-lg font-semibold mb-2">Retailers:</h4>
+                                <h4 className="text-2xl font-semibold mb-2 text-white">Retailers:</h4>
                                 <table className="w-full table-auto border-collapse border border-gray-200">
                                 <thead>
                                         <tr className="bg-gray-100">
@@ -319,7 +319,7 @@ const Register = () => {
                                 </thead>
                                 <tbody>
                                         {RET && Object.keys(RET).map((key) => (
-                                        <tr key={key} className={key % 2 === 0 ? "bg-gray-50" : ""}>
+                                        <tr key={key} className="bg text-white">
                                                 <td className="border border-gray-200 px-4 py-2">{RET[key].name}</td>
                                                 <td className="border border-gray-200 px-4 py-2">{RET[key].place}</td>
                                                 <td className="border border-gray-200 px-4 py-2">{RET[key].addr}</td>

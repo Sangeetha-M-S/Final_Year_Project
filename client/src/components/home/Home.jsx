@@ -20,7 +20,7 @@ const Home = () => {
               
         return (
 
-        <div className="flex flex-wrap items-start p-9 bg-jade h-full" >
+        <div className="flex justify-between items-start p-9 bg-gradient-to-r from-teal-600 to-teal-500 h-screen" >
                 <div className="max-w-5xl mx-4 my-20 w-1/2">
                         <h1 className="text-7xl font-bold text-white mb-20">What is PharmaTrust ?</h1>
                         <p className="text-2xl leading-relaxed mt-4 text-white text-justify">
@@ -35,23 +35,23 @@ const Home = () => {
                         solutions redefine the standards of security, transparency, and compliance in the pharmaceutical industry.
                         </p>
                 </div>
-                <div className="flex flex-col max-w-5xl my-20 ml-8 mb-8 place-content-center w-1/2 cursor-pointer">
+                <div className="flex flex-col max-w-5xl my-20 ml-8 mb-8 place-content-center w-1/2">
                         <h1 className='text-7xl font-bold text-white mb-6'>Features</h1>
                         <div className="mb-6 p-5 shadow-md transition-all duration-300 hover:shadow-lg rounded-lg">
-                                <h1 className="text-4xl mb-2"><MdGroups className="inline-block mr-2" />Add Stakeholders</h1>
-                                <p className="text-xl">Option to add manufacturers, raw materials suppliers, distributors, and retailers</p>
+                                <h1 className="text-4xl mb-2 text-white"><MdGroups className="inline-block mr-2" />Add Stakeholders</h1>
+                                <p className="text-xl text-white">Option to add manufacturers, raw materials suppliers, distributors, and retailers</p>
                         </div>
                         <div className="mb-6 p-5 shadow-md transition-all duration-300 hover:shadow-lg rounded-lg">
-                                <h1 className="text-4xl mb-2"><GiMedicines className="inline-block mr-2" />Order Medicines</h1>
-                                <p className="text-xl">Option to order medicine applicable only for retailers</p>
+                                <h1 className="text-4xl mb-2 text-white"><GiMedicines className="inline-block mr-2" />Order Medicines</h1>
+                                <p className="text-xl text-white">Option to order medicine applicable only for retailers</p>
                         </div>
                         <div className="mb-6 p-5 shadow-md transition-all duration-300 hover:shadow-lg rounded-lg">
-                                <h1 className="text-4xl mb-2"><CgTrack className="inline-block mr-2" />Track Medicines</h1>
-                                <p className="text-xl">Option to update the status of medicine for manufacturers, raw material suppliers, distributors, and retailers</p>
+                                <h1 className="text-4xl mb-2 text-white"><CgTrack className="inline-block mr-2" />Track Medicines</h1>
+                                <p className="text-xl text-white">Option to update the status of medicine for manufacturers, raw material suppliers, distributors, and retailers</p>
                         </div>
                         <div className="mb-6 p-5 shadow-md transition-all duration-300 hover:shadow-lg rounded-lg">
-                                <h1 className="text-4xl mb-2"><GrDocumentUpdate className="inline-block mr-2" />Update Medicines</h1>
-                                <p className="text-xl">Option to track any medicine</p>
+                                <h1 className="text-4xl mb-2 text-white"><GrDocumentUpdate className="inline-block mr-2" />Update Medicines</h1>
+                                <p className="text-xl text-white">Option to track any medicine</p>
                         </div>
                 </div>
 

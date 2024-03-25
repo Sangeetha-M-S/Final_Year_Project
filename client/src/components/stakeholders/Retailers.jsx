@@ -1,5 +1,6 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom';
+import rawMaterialSupply from '../../images/rawmaterials.jpg'
 
 
 const Retailers = () => {
@@ -20,27 +21,30 @@ const Retailers = () => {
         };
 
   return (
-    <div className="text-black p-12">
-      <h1 className="text-5xl font-bold mb-4">Welcome Retailer!!</h1>
-      <div className="mb-6 text-2xl pt-8">What would you like to do?</div>
+    <div className="text-white bg-gradient-to-r from-teal-600 to-teal-500 p-12 h-screen overflow-hidden">
+      <h1 className="text-5xl font-bold mb-20">Retailer Dashboard</h1>
+      {/* <div className="mb-6 text-2xl pt-8">What would you like to do?</div> */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div onClick={handleOrderClick} className="cursor-pointer bg-white p-6 rounded-lg shadow-md flex flex-col justify-center h-80">
-          <h2 className="text-xl font-bold mb-2 h-32 p-11 text-white bg-sky-700 text-center">Order Medicines</h2>
-          <p className="mb-0">fbnwjehbgfvjhsebgjksb</p>
-        </div>
-        <div onClick={handleRetailClick} className="cursor-pointer bg-white p-6 rounded-lg shadow-md flex flex-col justify-center h-80">
-          <h2 className="text-xl font-bold mb-2 h-32 p-11 text-white bg-sky-700 text-center">Retail Medicines</h2>
-          <p className="mb-0">fbnwjehbgfvjhsebgjksb</p>
-        </div>
-        <div onClick={handleSellClick} className="cursor-pointer bg-white p-6 rounded-lg shadow-md flex flex-col justify-center h-80">
-          <h2 className="text-xl font-bold mb-2 h-32 p-11 text-white bg-sky-700 text-center">Sell Medicines</h2>
-          <p className="mb-0">fbnwjehbgfvjhsebgjksb</p>
-        </div>
-        <div onClick={handleTrackerClick} className="cursor-pointer bg-white p-6 rounded-lg shadow-md flex flex-col justify-center h-80 ">
-          <h2 className="text-xl font-bold mb-2 h-32 p-11 text-white bg-sky-700 text-center">Track Medicines</h2>
-          <p className="mb-0">fbnwjehbgfvjhsebgjksb</p>
-        </div>
-      </div>
+                        <div onClick={handleOrderClick} className="cursor-pointer bg-teal-600  rounded-lg shadow-lg flex flex-col justify-center h-100 ">
+                                        <div className="overflow-hidden">
+                                                <img src={rawMaterialSupply} alt="" className="rounded-lg shadow-lg"/>
+                                        </div>
+                                        <button className="text-3xl font-bold rounded-b-lg mb-2 h-32 p-9 text-white bg-teal-800 text-center"><a href='/order'>Order Medicines</a></button>
+                                </div>
+                                <div onClick={handleSellClick} className="cursor-pointer bg-teal-600  rounded-lg shadow-md flex flex-col justify-center h-100 ">
+                                        <div className="overflow-hidden">
+                                                <img src={rawMaterialSupply} alt="" className="rounded-lg shadow-lg"/>
+                                        </div>
+                                        <button className="text-3xl font-bold rounded-b-lg mb-2 h-32 p-9 text-white bg-teal-800 text-center"><a href='/sell'>Sell Medicines</a></button>
+                                </div>
+                                <div onClick={handleRetailClick} className="cursor-pointer bg-teal-600  rounded-lg shadow-md flex flex-col justify-center h-100 ">
+                                        <div className="overflow-hidden">
+                                                <img src={rawMaterialSupply} alt="" className="rounded-lg shadow-lg"/>
+                                        </div>
+                                        <button className="text-3xl font-bold rounded-b-lg mb-2 h-32 p-9 text-white bg-teal-800 text-center"><a href='/retail'>Retail Medicines</a></button>
+                                </div>
+                               
+                        </div>
     </div>
   )
 }

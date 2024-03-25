@@ -93,13 +93,13 @@ const Retail = () => {
                 console.log(description);
         };
         return (
-        <div>
-                        <h1 className='text-5xl font-bold text-blue-500 mt-16 mb-16'>Retail Medicine</h1>
+        <div className='bg-gradient-to-r from-teal-600 to-teal-500 h-screen'> 
+                        <h1 className='text-5xl font-bold p-5 mb-4 text-white'>Retail Medicine</h1>
                         <div className="grid grid-cols-2 gap-4 drop-shadow-xl">
                                 <div className="p-16 drop-shadow-xl">
-                                        <label className="p-8 text-4xl" htmlFor="name">Medicine ID</label>
+                                        <label className="p-8 text-4xl text-white" htmlFor="name">Medicine ID</label>
                                         <input 
-                                        className="text-3xl border border-black-300 rounded-md"
+                                        className="text-3xl border border-black-300 rounded-md p-2"
                                         id="name"
                                         type="text"
                                         onChange={handleMedicineID}
@@ -108,9 +108,9 @@ const Retail = () => {
                                         />
                                 </div>
                                 <div className="p-16 drop-shadow-xl">
-                                        <label className="p-8 text-4xl" htmlFor="description">Description</label>
+                                        <label className="p-8 text-4xl text-white" htmlFor="description">Description</label>
                                         <input 
-                                        className="text-3xl border border-black-300 rounded-md"
+                                        className="text-3xl border border-black-300 rounded-md p-2"
                                         id="description"
                                         type="text"
                                         onChange={handleDescription}
@@ -119,7 +119,7 @@ const Retail = () => {
                                         />
                         </div>
                 </div>
-                <button className='bg-blue-500 text-white px-6 py-3 rounded-md mt-8 hover:bg-blue-600 text-3xl' onClick={handlerRetailMedicine}>Retail</button>    
+                <button className='bg-teal-800 hover:bg-teal-700 text-white px-6 py-3 rounded-md mt-2 mb-2 text-3xl' onClick={handlerRetailMedicine}>Retail</button>    
                 <table className="w-full mt-4 border border-gray-200">
                                 <thead>
                                 <tr className="bg-gray-100">
@@ -132,7 +132,7 @@ const Retail = () => {
                                 </thead>
                                 <tbody>
                                 {MED && Object.values(MED).map((med, index) => (
-                                        <tr key={index} className={index % 2 === 0 ? 'bg-gray-50' : ''}>
+                                        <tr key={index} className="bg text-white">
                                         <td className="border border-gray-200 px-4 py-2 text-2xl">{med.id}</td>
                                         <td className="border border-gray-200 px-4 py-2 text-2xl">{med.name}</td>
                                         <td className="border border-gray-200 px-4 py-2 text-2xl">{med.expDate}</td>
